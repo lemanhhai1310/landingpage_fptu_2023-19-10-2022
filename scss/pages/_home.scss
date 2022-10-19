@@ -1,0 +1,191 @@
+.home{
+  &__hinhanh{
+    background-color: #{$primary-color};
+    img{
+      width: 100%;
+    }
+  }
+  &__tuyensinh{
+    background-color: #121926;
+    &__tab{
+      $y:6px;
+      $x:0px;
+      margin-left: calc(0px - #{$x});
+      >*{
+        padding-left: #{$x};
+        >*{
+          justify-content: center;
+          font-family: $font-HelveticaNeue-Medium;
+          @extend .fz-22;
+          text-transform: inherit !important;
+          background-color: #CFCFCF !important;
+          color: #6F6F6E !important;
+          clip-path: polygon(#{$y} 0, 100% 0%, calc(100% - #{$y}) 100%, 0% 100%);
+        }
+        &:first-child{
+          >*{
+            clip-path: polygon(0 0, 100% 0%, calc(100% - #{$y}) 100%, 0% 100%);
+          }
+        }
+        &:last-child{
+          >*{
+            clip-path: polygon(#{$y} 0, 100% 0%, 100% 100%, 0% 100%);
+          }
+        }
+        &.uk-active{
+          >a{
+            background-color: #{$primary-color} !important;
+            color: #ffffff !important;
+          }
+        }
+      }
+    }
+    &__width{
+      max-width: 960px;
+      width: 100%;
+    }
+    &__content{
+      background: #6F6F6E;
+      padding: 15px;
+      padding-bottom: 20px;
+      @include media-breakpoint-up('m'){
+        padding: 20px;
+        padding-bottom: 50px;
+      }
+    }
+    &__txt1{
+      @extend .fz-16;
+      color: #1D1D1B;
+      line-height: (19.2/16);
+      font-family: $font-Barlow-SemiBold;
+    }
+    &__txt2{
+      @extend .fz-14;
+      font-family: $font-Barlow-Regular;
+      color: #231F20;
+      padding-left: 30px;
+      @include media-breakpoint-up('m'){
+        padding-left: 50px;
+      }
+      position: relative;
+      &:before{
+        content: attr(data-txt);
+        position: absolute;
+        top: -17px;
+        left: 15px;
+        @include media-breakpoint-up('m'){
+          top: -27px;
+          left: 15px;
+        }
+        @extend .fz-33;
+        color: #{$primary-color};
+        font-family: $font-Syne-Bold;
+      }
+    }
+  }
+  &__sinhvien{
+    &__width{
+      max-width: 318px;
+    }
+    &__dots{
+      >*{
+        >*{
+          width: 8px;
+          height: 8px;
+          border-color: #{$primary-color};
+          &:hover{
+            background: #{$primary-color};
+          }
+        }
+        &.uk-active{
+          >*{
+            background: #{$primary-color};
+          }
+        }
+      }
+    }
+    &__box{
+      position: relative;
+      &:before{
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: -18px;
+        width: 55px;
+        height: 42px;
+        display: flex;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='55' height='42' viewBox='0 0 55 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.4571 0.998047L22.3521 6.17822C20.7261 8.41222 19.2291 10.9001 17.8581 13.6421C16.4871 16.3831 15.6991 19.2279 15.4971 22.1719L23.8751 23.6948V41.2129H0.569092V28.7222C0.569092 21.5132 2.26809 15.6988 5.67209 11.2808C9.07309 6.86276 13.6691 3.43505 19.4571 0.998047ZM49.6181 0.998047L52.5131 6.17822C50.8881 8.41222 49.3901 10.9001 48.0191 13.6421C46.6481 16.3831 45.8601 19.2279 45.6581 22.1719L54.0361 23.6948V41.2129H30.7301V28.7222C30.7301 21.5132 32.4291 15.6988 35.8331 11.2808C39.2341 6.86276 43.8301 3.43505 49.6181 0.998047Z' fill='%23D0D0D0'/%3E%3C/svg%3E%0A");
+        opacity: 0;
+        @include media-breakpoint-up('s'){
+          opacity: 1;
+        }
+      }
+    }
+    &__txt1{
+      @extend .fz-14;
+      line-height: (16.03/13.36);
+      color: #231F20;
+    }
+    &__txt2{
+      color: #231F20;
+      @extend .fz-25;
+      line-height: (30.43/25.36);
+      span{
+        font-family: $font-Barlow-Bold;
+      }
+    }
+  }
+  &__dky{
+    background-color: #{$secondary-color};
+    &__title{
+      @extend .fz-38;
+      color: #{$primary-color};
+      font-family: $font-HelveticaNeue-Medium;
+    }
+    &__input{
+      font-family: $font-Barlow-LightItalic;
+      @extend .fz-14;
+      color: #231F20;
+      &::placeholder{
+        color: #231F20;
+      }
+    }
+    &__label{
+      color: #ffffff;
+      @extend .fz-14;
+      font-family: $font-Barlow-Regular;
+      &:first-child{
+        font-family: $font-Barlow-Bold;
+        width: 100%;
+        @include media-breakpoint-up('s'){
+          min-width: 200px;
+          width: auto;
+        }
+      }
+    }
+    &__radio{
+
+    }
+    &__btnSubmit{
+      @extend .fz-12;
+      font-family: $font-Barlow-Regular;
+      background: #{$primary-color};
+      &:hover{
+        border-color: #ffffff;
+        color: #{$primary-color};
+        background: #ffffff;
+      }
+    }
+    &__item-40-20{
+      &:nth-child(n+2){
+        margin-top: 20px;
+        @include media-breakpoint-up('m'){
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
