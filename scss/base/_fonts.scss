@@ -82,9 +82,16 @@
  * --------------------------------------------------------------------
  */
 @font-face{
+  font-family:'Helvetica Neue Regular';
+  font-display: swap;
+  src:local('Helvetica Neue Regular'), url('fonts/HelveticaNeue.otf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+}
+@font-face{
   font-family:'Helvetica Neue Medium';
   font-display: swap;
-  src:local('Helvetica Neue Medium'), url('fonts/HelveticaNeue.ttc') format('truetype');
+  src:local('Helvetica Neue Medium'), url('fonts/HelveticaNeue-Medium.otf') format('truetype');
   font-weight:normal;
   font-style:normal;
 }

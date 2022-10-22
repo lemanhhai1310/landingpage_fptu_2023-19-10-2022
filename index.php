@@ -1,6 +1,57 @@
 <?php $data["title"] = "Home"; ?>
 <?php $bodyClass = '' ?>
 <?php require "template-parts/layouts/header.php"; ?>
+<!--Chuyên ngành đào tạo-->
+<div class="uk-section home__daotao">
+    <div class="uk-container">
+        <div class="home__dky__item-40-20">
+            <h2 class="uk-h2 home__dky__title uk-text-center uk-margin-remove">
+                Chuyên ngành đào tạo
+            </h2>
+        </div>
+        <div class="home__dky__item-40-20">
+            <div class="uk-child-width-1-3@m" uk-grid>
+                <?php
+                $data = array(
+                    array(
+                        'title' => 'Ngành Quản Trị Kinh Doanh',
+                        'txt' => '<span>MÃ NGÀNH:</span> 7340101 / <span>CHỈ TIÊU:</span> 6265',
+                    ),
+                    array(
+                        'title' => 'Công Nghệ Thông Tin',
+                        'txt' => '<span>MÃ NGÀNH:</span> 7480201 / <span>CHỈ TIÊU:</span> 9715',
+                    ),
+                    array(
+                        'title' => 'Ngôn Ngữ',
+                        'txt' => '<span>CHỈ TIÊU:</span> 1085',
+                    ),
+                );
+                foreach ($data as $k=>$v): ?>
+                <div>
+                    <div class="home__daotao__item">
+                        <div class="home__daotao__box1 dynamic-height"><?= $v['title'] ?></div>
+                        <div>
+                            <div class="home__daotao__box2 dynamic-height"><?= $v['txt'] ?></div>
+                        </div>
+                    </div>
+                    <div class="home__daotao__item">
+                        <div class="uk-grid-10" uk-grid>
+                            <div class="uk-width-auto">
+
+                            </div>
+                            <div class="uk-width-expand">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Chuyên ngành đào tạo-->
+
 <!--Thông báo tuyển sinh Hệ đại học chính quy Đại học FPT năm 2023-->
 <div class="uk-section home__tuyensinh">
     <div class="uk-container">
@@ -12,9 +63,9 @@
         </div>
         <div class="home__dky__item-40-20">
             <ul class="home__tuyensinh__tab uk-subnav uk-subnav-pill uk-child-width-expand uk-margin-remove-bottom" uk-switcher>
-                <li><a href="#">Phương thức tuyển sinh</a></li>
-                <li><a href="#">Thủ tục xét tuyển</a></li>
-                <li><a href="#">Đăng ký & Nộp phí</a></li>
+                <li><a href="#" class="dynamic-height">Phương thức tuyển sinh</a></li>
+                <li><a href="#" class="dynamic-height">Thủ tục xét tuyển</a></li>
+                <li><a href="#" class="dynamic-height">Đăng ký & Nộp phí</a></li>
             </ul>
             <ul class="uk-switcher">
                 <li>

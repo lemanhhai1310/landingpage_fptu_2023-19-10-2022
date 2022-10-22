@@ -9,7 +9,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" />
-    <!--<link rel="stylesheet" href="style.css?v=--><?php //echo(time()) ?><!--">-->
+    <link rel="stylesheet" href="style.css?v=<?php echo(time()) ?>">
 
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js/dist/defer_plus.min.js"></script>
@@ -17,9 +17,6 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
     <script src="js/app.js?v=<?php echo(time()) ?>"></script>
-    <style>
-        <?= file_get_contents('style.css'); ?>
-    </style>
 </head>
 <body class="<?= (isset($bodyClass))?$bodyClass:'' ?>">
 <?php require "template-parts/commons/facebook_chat.php"; ?>

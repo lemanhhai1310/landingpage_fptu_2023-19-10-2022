@@ -1,3 +1,4 @@
+$goc: 70deg;
 .home{
   &__hinhanh{
     background-color: #{$primary-color};
@@ -5,31 +6,97 @@
       width: 100%;
     }
   }
+  &__daotao{
+    background-color: #FFDCC0;
+    &__dc{
+      padding: 0 25px;
+      $h:var(--height);
+      $x:calc(#{$h}/tan(#{$goc}));
+      clip-path: polygon(#{$x} 0%, 100% 0%, calc(100% - #{$x}) 100%, 0% 100%);
+      display: flex;
+      align-items: center;
+    }
+    &__box1{
+      background-color: #{$primary-color};
+      color: #ffffff;
+      @extend .home__daotao__dc;
+      @extend .fz-24;
+      font-family: $font-HelveticaNeue-Regular;
+      line-height: (28.8/24);
+      min-height: 36px;
+    }
+    &__box2{
+      background-color: #fff;
+      @extend .home__daotao__dc;
+      @extend .fz-14;
+      line-height: (16.8/14);
+      color: #1D1D1B;
+      max-width: 250px;
+      min-height: 30px;
+      span{
+        font-family: $font-Barlow-Bold;
+      }
+    }
+    &__item{
+      &:nth-child(n+2){
+        margin-top: 10px;
+      }
+    }
+  }
   &__tuyensinh{
     background-color: #121926;
     &__tab{
-      $y:6px;
       $x:0px;
       margin-left: calc(0px - #{$x});
+      align-items: flex-end;
       >*{
         padding-left: #{$x};
         >*{
+          $y:6px;
+          clip-path: polygon(#{$y} 0, 100% 0%, calc(100% - #{$y}) 100%, 0% 100%);
+          @include media-breakpoint-up('m'){
+            $h:var(--height);
+            $y:calc(#{$h}/tan(#{$goc}));
+            clip-path: polygon(#{$y} 0, 100% 0%, calc(100% - #{$y}) 100%, 0% 100%);
+          }
+          @extend .line-clamp-2;
           justify-content: center;
-          font-family: $font-HelveticaNeue-Medium;
-          @extend .fz-22;
+          font-family: $font-HelveticaNeue-Regular;
+          font-size: 16px;
+          @include media-breakpoint-up('m'){
+            font-size: 22px !important;
+          }
           text-transform: inherit !important;
           background-color: #CFCFCF !important;
           color: #6F6F6E !important;
-          clip-path: polygon(#{$y} 0, 100% 0%, calc(100% - #{$y}) 100%, 0% 100%);
+        }
+        &:nth-child(n+2){
+          >*{
+            @include media-breakpoint-up('m'){
+              margin-left: -8px;
+            }
+          }
         }
         &:first-child{
           >*{
+            $y:6px;
             clip-path: polygon(0 0, 100% 0%, calc(100% - #{$y}) 100%, 0% 100%);
+            @include media-breakpoint-up('m'){
+              $h:var(--height);
+              $y:calc(#{$h}/tan(#{$goc}));
+              clip-path: polygon(0 0, 100% 0%, calc(100% - #{$y}) 100%, 0% 100%);
+            }
           }
         }
         &:last-child{
           >*{
+            $y:6px;
             clip-path: polygon(#{$y} 0, 100% 0%, 100% 100%, 0% 100%);
+            @include media-breakpoint-up('m'){
+              $h:var(--height);
+              $y:calc(#{$h}/tan(#{$goc}));
+              clip-path: polygon(#{$y} 0, 100% 0%, 100% 100%, 0% 100%);
+            }
           }
         }
         &.uk-active{
@@ -90,8 +157,8 @@
     &__dots{
       >*{
         >*{
-          width: 8px;
-          height: 8px;
+          //width: 8px;
+          //height: 8px;
           border-color: #{$primary-color};
           &:hover{
             background: #{$primary-color};

@@ -86,9 +86,16 @@ body {
  * --------------------------------------------------------------------
  */
 @font-face {
+  font-family: "Helvetica Neue Regular";
+  font-display: swap;
+  src: local("Helvetica Neue Regular"), url("fonts/HelveticaNeue.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "Helvetica Neue Medium";
   font-display: swap;
-  src: local("Helvetica Neue Medium"), url("fonts/HelveticaNeue.ttc") format("truetype");
+  src: local("Helvetica Neue Medium"), url("fonts/HelveticaNeue-Medium.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -866,16 +873,16 @@ body {
   }
 }
 
-.fz-14, .home__dky__label, .home__dky__input, .home__sinhvien__txt1, .home__tuyensinh__txt2 {
+.fz-14, .home__dky__label, .home__dky__input, .home__sinhvien__txt1, .home__tuyensinh__txt2, .home__daotao__box2 {
   font-size: 14px !important;
 }
 @media screen and (min-width: 640px) {
-  .fz-14, .home__dky__label, .home__dky__input, .home__sinhvien__txt1, .home__tuyensinh__txt2 {
+  .fz-14, .home__dky__label, .home__dky__input, .home__sinhvien__txt1, .home__tuyensinh__txt2, .home__daotao__box2 {
     font-size: calc(14px + 0 * ((100vw - 640px) / 560)) !important;
   }
 }
 @media screen and (min-width: 1200px) {
-  .fz-14, .home__dky__label, .home__dky__input, .home__sinhvien__txt1, .home__tuyensinh__txt2 {
+  .fz-14, .home__dky__label, .home__dky__input, .home__sinhvien__txt1, .home__tuyensinh__txt2, .home__daotao__box2 {
     font-size: 14px !important;
   }
 }
@@ -922,17 +929,31 @@ body {
   }
 }
 
-.fz-22, .home__tuyensinh__tab > * > * {
+.fz-22 {
   font-size: 17.6px !important;
 }
 @media screen and (min-width: 640px) {
-  .fz-22, .home__tuyensinh__tab > * > * {
+  .fz-22 {
     font-size: calc(17.6px + 4.4 * ((100vw - 640px) / 560)) !important;
   }
 }
 @media screen and (min-width: 1200px) {
-  .fz-22, .home__tuyensinh__tab > * > * {
+  .fz-22 {
     font-size: 22px !important;
+  }
+}
+
+.fz-24, .home__daotao__box1 {
+  font-size: 19.2px !important;
+}
+@media screen and (min-width: 640px) {
+  .fz-24, .home__daotao__box1 {
+    font-size: calc(19.2px + 4.8 * ((100vw - 640px) / 560)) !important;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fz-24, .home__daotao__box1 {
+    font-size: 24px !important;
   }
 }
 
@@ -1013,7 +1034,7 @@ body {
   overflow: hidden;
 }
 
-.line-clamp-2 {
+.line-clamp-2, .home__tuyensinh__tab > * > * {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -1088,28 +1109,84 @@ body {
 .home__hinhanh img {
   width: 100%;
 }
+.home__daotao {
+  background-color: #FFDCC0;
+}
+.home__daotao__dc, .home__daotao__box2, .home__daotao__box1 {
+  padding: 0 25px;
+  clip-path: polygon(calc(var(--height)/tan(70deg)) 0%, 100% 0%, calc(100% - calc(var(--height)/tan(70deg))) 100%, 0% 100%);
+  display: flex;
+  align-items: center;
+}
+.home__daotao__box1 {
+  background-color: #F17126;
+  color: #ffffff;
+  font-family: "Helvetica Neue Regular", sans-serif;
+  line-height: 1.2;
+  min-height: 36px;
+}
+.home__daotao__box2 {
+  background-color: #fff;
+  line-height: 1.2;
+  color: #1D1D1B;
+  max-width: 250px;
+  min-height: 30px;
+}
+.home__daotao__box2 span {
+  font-family: "Barlow Bold", sans-serif;
+}
+.home__daotao__item:nth-child(n+2) {
+  margin-top: 10px;
+}
 .home__tuyensinh {
   background-color: #121926;
 }
 .home__tuyensinh__tab {
   margin-left: calc(0px - 0px);
+  align-items: flex-end;
 }
 .home__tuyensinh__tab > * {
   padding-left: 0px;
 }
 .home__tuyensinh__tab > * > * {
+  clip-path: polygon(6px 0, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
   justify-content: center;
-  font-family: "Helvetica Neue Medium", sans-serif;
+  font-family: "Helvetica Neue Regular", sans-serif;
+  font-size: 16px;
   text-transform: inherit !important;
   background-color: #CFCFCF !important;
   color: #6F6F6E !important;
-  clip-path: polygon(6px 0, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+}
+@media (min-width: 960px) {
+  .home__tuyensinh__tab > * > * {
+    clip-path: polygon(calc(var(--height)/tan(70deg)) 0, 100% 0%, calc(100% - calc(var(--height)/tan(70deg))) 100%, 0% 100%);
+  }
+}
+@media (min-width: 960px) {
+  .home__tuyensinh__tab > * > * {
+    font-size: 22px !important;
+  }
+}
+@media (min-width: 960px) {
+  .home__tuyensinh__tab > *:nth-child(n+2) > * {
+    margin-left: -8px;
+  }
 }
 .home__tuyensinh__tab > *:first-child > * {
   clip-path: polygon(0 0, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
 }
+@media (min-width: 960px) {
+  .home__tuyensinh__tab > *:first-child > * {
+    clip-path: polygon(0 0, 100% 0%, calc(100% - calc(var(--height)/tan(70deg))) 100%, 0% 100%);
+  }
+}
 .home__tuyensinh__tab > *:last-child > * {
   clip-path: polygon(6px 0, 100% 0%, 100% 100%, 0% 100%);
+}
+@media (min-width: 960px) {
+  .home__tuyensinh__tab > *:last-child > * {
+    clip-path: polygon(calc(var(--height)/tan(70deg)) 0, 100% 0%, 100% 100%, 0% 100%);
+  }
 }
 .home__tuyensinh__tab > *.uk-active > a {
   background-color: #F17126 !important;
@@ -1164,8 +1241,6 @@ body {
   max-width: 318px;
 }
 .home__sinhvien__dots > * > * {
-  width: 8px;
-  height: 8px;
   border-color: #F17126;
 }
 .home__sinhvien__dots > * > *:hover {
