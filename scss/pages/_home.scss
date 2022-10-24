@@ -1,6 +1,40 @@
 $goc: 70deg;
 .dynamic-height{}
 .home{
+  &__block01{
+    background-color: #{$primary-color};
+    position: relative;
+    &__top{
+      background-color: #C6621D;
+      $h:var(--height);
+      $x:calc(#{$h}/tan(#{$goc}));
+      clip-path: polygon(#{$x} 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    &__bottom{
+      background-color: #C6621D;
+      $h:var(--height);
+      $x:calc(#{$h}/tan(#{$goc}));
+      clip-path: polygon(0% 0%, 100% 0%, calc(100% - #{$x}) 100%, 0% 100%);
+    }
+    &__form{
+      border: 1px solid #ffffff;
+      padding: 20px 20px 35px;
+    }
+    &__title{
+      top: -14px;
+      padding: 0 10px;
+      background-color: #{$primary-color};
+      color: #ffffff;
+      @extend .fz-20;
+      font-family: $font-Barlow-Bold;
+      line-height: (24/20);
+    }
+    &__boxBtn{
+      padding: 0 10px;
+      background-color: #{$primary-color};
+      bottom: -20px;
+    }
+  }
   &__sinhvienchon{
     background-color: #{$primary-color};
     &__txt{
@@ -264,6 +298,7 @@ $goc: 70deg;
       @extend .fz-12;
       font-family: $font-Barlow-Regular;
       background: #{$primary-color};
+      .home__block01 &,
       .home__sinhvienchon &{
         background: #{$secondary-color};
       }
@@ -272,6 +307,7 @@ $goc: 70deg;
         color: #{$primary-color};
         background: #ffffff;
 
+        .home__block01 &,
         .home__sinhvienchon &{
           color: #{$secondary-color};
         }

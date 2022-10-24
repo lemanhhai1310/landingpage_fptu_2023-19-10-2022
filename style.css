@@ -980,16 +980,16 @@ body {
   }
 }
 
-.fz-20 {
+.fz-20, .home__block01__title {
   font-size: 16px !important;
 }
 @media screen and (min-width: 640px) {
-  .fz-20 {
+  .fz-20, .home__block01__title {
     font-size: calc(16px + 4 * ((100vw - 640px) / 560)) !important;
   }
 }
 @media screen and (min-width: 1200px) {
-  .fz-20 {
+  .fz-20, .home__block01__title {
     font-size: 20px !important;
   }
 }
@@ -1207,6 +1207,35 @@ body {
   padding: 0 16px;
 }
 
+.home__block01 {
+  background-color: #F17126;
+  position: relative;
+}
+.home__block01__top {
+  background-color: #C6621D;
+  clip-path: polygon(calc(var(--height)/tan(70deg)) 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.home__block01__bottom {
+  background-color: #C6621D;
+  clip-path: polygon(0% 0%, 100% 0%, calc(100% - calc(var(--height)/tan(70deg))) 100%, 0% 100%);
+}
+.home__block01__form {
+  border: 1px solid #ffffff;
+  padding: 20px 20px 35px;
+}
+.home__block01__title {
+  top: -14px;
+  padding: 0 10px;
+  background-color: #F17126;
+  color: #ffffff;
+  font-family: "Barlow Bold", sans-serif;
+  line-height: 1.2;
+}
+.home__block01__boxBtn {
+  padding: 0 10px;
+  background-color: #F17126;
+  bottom: -20px;
+}
 .home__sinhvienchon {
   background-color: #F17126;
 }
@@ -1436,7 +1465,7 @@ body {
   font-family: "Barlow Regular", sans-serif;
   background: #F17126;
 }
-.home__sinhvienchon .home__dky__btnSubmit {
+.home__block01 .home__dky__btnSubmit, .home__sinhvienchon .home__dky__btnSubmit {
   background: #9C360E;
 }
 .home__dky__btnSubmit:hover {
@@ -1444,7 +1473,7 @@ body {
   color: #F17126;
   background: #ffffff;
 }
-.home__sinhvienchon .home__dky__btnSubmit:hover {
+.home__block01 .home__dky__btnSubmit:hover, .home__sinhvienchon .home__dky__btnSubmit:hover {
   color: #9C360E;
 }
 .home__dky__item-40-20:nth-child(n+2) {

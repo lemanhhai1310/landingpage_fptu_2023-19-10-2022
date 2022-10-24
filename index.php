@@ -23,8 +23,107 @@
         </nav>
     </div>
 </header>
+<div class="home__block01 uk-position-relative uk-overflow-hidden">
+    <div uk-scrollspy="cls: uk-animation-slide-right; repeat: true" class="dynamic-height home__block01__top uk-position-top-right uk-cover-container uk-visible@m">
+        <canvas width="382" height="144"></canvas>
+    </div>
+    <div uk-scrollspy="cls: uk-animation-slide-left; repeat: true" class="dynamic-height home__block01__bottom uk-position-bottom-left uk-cover-container uk-visible@m">
+        <canvas width="571" height="97"></canvas>
+    </div>
+    <div class="uk-height-min-large uk-flex uk-flex-bottom">
+        <div class="uk-width-1-1 uk-position-relative uk-section uk-padding-remove-bottom">
+            <div class="uk-container">
+                <div class="uk-grid-0-m uk-grid-40 uk-flex-middle" uk-grid>
+                    <div class="uk-width-expand">
+                        <div class="uk-child-width-1-2@m uk-grid-40 uk-grid-15-m uk-flex-middle" uk-grid>
+                            <div>
+                                <div class="uk-light">
+                                    <h2 class="uk-h2 uk-margin-remove">Xét học bạ THPT <br class="uk-visible@m">
+                                        Hoặc Điểm thi THPT <br class="uk-visible@m">
+                                        TOP40</h2>
+                                    <div class="item__15">Để lại thông tin nhận tư vấn.</div>
+                                </div>
+                            </div>
+                            <div>
+                                <form class="home__block01__form uk-card uk-card-body">
+                                    <fieldset class="uk-fieldset">
+                                        <legend class="home__block01__title uk-legend uk-position-top-center">ĐĂNG KÝ TƯ VẤN</legend>
+                                        <div class="">
+                                            <input class="uk-input home__dky__input" type="text" placeholder="Họ và tên">
+                                        </div>
+                                        <div class="item__15">
+                                            <input class="uk-input home__dky__input" type="tel" placeholder="Điện thoại">
+                                        </div>
+                                        <div class="item__15">
+                                            <input class="uk-input home__dky__input" type="email" placeholder="Email">
+                                        </div>
+                                        <div class="item__15">
+                                            <input class="uk-input home__dky__input" type="text" placeholder="Tỉnh / Thành phố">
+                                        </div>
+                                        <div class="uk-position-bottom-center home__block01__boxBtn">
+                                            <button type="button" class="uk-button uk-button-secondary home__dky__btnSubmit">ĐĂNG KÝ NGAY</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-auto@m uk-flex-first@m">
+                        <img uk-scrollspy="cls: uk-animation-slide-bottom; repeat: true" src="images/1x/bg1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="uk-height-min-medium uk-section">
+    <div class="uk-container">
+        <div uk-grid>
+            <?php
+            $data = array(
+                array(
+                    'img' => 'images/1x/ts1.png',
+                    'txt1' => '5 sao',
+                    'txt2' => 'chất lượng đào tạo',
+                ),
+                array(
+                    'img' => 'images/1x/ts2.png',
+                    'txt1' => '98%',
+                    'txt2' => 'sinh viên có việc làm ngay',
+                ),
+                array(
+                    'img' => 'images/1x/ts3.png',
+                    'txt1' => '100%',
+                    'txt2' => 'sinh viên làm việc thực tế tại doanh nghiệp từ năm 3',
+                ),
+                array(
+                    'img' => 'images/1x/ts4.png',
+                    'txt1' => '19%',
+                    'txt2' => 'sinh viên có việc làm tại nước ngoài',
+                ),
+                array(
+                    'img' => 'images/1x/ts5.png',
+                    'txt1' => '1500',
+                    'txt2' => '4 năm đại học cho tân sinh viên',
+                    'txt3' => 'suất học bổng',
+                ),
+            );
+            foreach ($data as $k=>$v): ?>
+                <?php if ($k!=2): ?>
+                    <div class="uk-width-1-2@m">
+                        
+                    </div>
+                <?php else: ?>
+                    <div class="uk-width-1-1">
+
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
 <!--50.000++ Sinh viên đã chọn Đại Học FPT-->
-<div class="home__sinhvienchon uk-flex uk-flex-middle uk-height-viewport">
+<div class="home__sinhvienchon uk-flex uk-flex-middle">
     <div class="uk-section uk-width-1-1">
         <div class="uk-container">
             <div class="home__dky__item-40-20 uk-light">
