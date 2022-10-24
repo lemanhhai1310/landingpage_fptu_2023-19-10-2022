@@ -1,6 +1,101 @@
 <?php $data["title"] = "Home"; ?>
 <?php $bodyClass = '' ?>
 <?php require "template-parts/layouts/header.php"; ?>
+<header class="header" uk-sticky>
+    <div class="uk-container uk-padding-remove">
+        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+            <div class="uk-navbar-left">
+                <a href="" class="uk-navbar-item uk-logo"><img src="images/1x/logo-fpt.png" alt=""></a>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav uk-visible@m">
+                    <li class="uk-active"><a href="#">Trang Chủ</a></li>
+                    <li><a href="#">Tại Sao Chọn ĐH FPT?</a></li>
+                    <li><a href="#">Thông Báo Tuyển Sinh</a></li>
+                    <li><a href="#">Chuyên Ngành Đào Tạo</a></li>
+                    <li><a href="#">Đăng Ký Học</a></li>
+                    <li><a href="#">Đăng Nhập</a></li>
+                </ul>
+                <a class="uk-navbar-toggle uk-hidden@m" href="#">
+                    <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--50.000++ Sinh viên đã chọn Đại Học FPT-->
+<div class="home__sinhvienchon uk-flex uk-flex-middle uk-height-viewport">
+    <div class="uk-section uk-width-1-1">
+        <div class="uk-container">
+            <div class="home__dky__item-40-20 uk-light">
+                <h2 class="uk-h2 home__dky__title uk-text-center uk-margin-remove">
+                    50.000++ Sinh viên đã chọn Đại Học FPT
+                </h2>
+                <div class="uk-text-center item__15 home__sinhvien__txt">Trường Đại học FPT là môi trường tạo điều kiện thuận lợi nhất để sinh viên phát triển năng lực cạnh tranh toàn cầu,
+                    <br class="uk-visible@m">
+                    chú trọng mang đến cho sinh viên sự trải nghiệm thực tiễn trong quá trình học.</div>
+            </div>
+            <div class="home__dky__item-40-20">
+                <div class="uk-child-width-1-2@m uk-grid-30 uk-grid-40-m" uk-grid>
+                    <?php
+                    $data = array(
+                        array(
+                            'img' => 'images/1x/svv1.png',
+                            'title' => 'Chất lượng đào tạo quốc tế',
+                            'desc' => 'Đại học FPT là trường đầu tiên được xếp hạng Ba Sao theo chuẩn quốc tế QS Stars của các trường đại học trên thế giới (2012), trong đó đạt Năm Sao cho 4 tiêu chí quan trọng: Đào tạo (Teaching), Việc làm (Employability), Cơ sở vật chất (Facilities) và Trách nhiệm Xã hội (Social Responsibility). Bên cạnh đó là hàng loạt giải thưởng danh giá trong nước và quốc tế.',
+                        ),
+                        array(
+                            'img' => 'images/1x/svv2.png',
+                            'title' => 'Đào tạo theo nhu cầu doanh nghiệp',
+                            'desc' => 'Chương trình đào tạo của Đại học FPT gắn liền với thực tiễn và nhu cầu doanh nghiệp, được xây dựng với sự tham gia hỗ trợ, tư vấn của các chuyên gia hàng đầu từ các công ty thành viên và đối tác của Tập đoàn FPT. Đại học FPT có mạng lưới liên kết với +400 danh nghiệp trong và ngoài nước.',
+                        ),
+                        array(
+                            'img' => 'images/1x/svv3.png',
+                            'title' => 'Cơ sở vật chất hiện đại với không gian học xanh',
+                            'desc' => 'Đại học FPT được xây dựng trên một không gian rộng lớn, tạo ra một môi trường giáo dục hiện đại, kết hợp hài hòa giữa cảnh quan thiên nhiên, thân thiện với môi trường. Trường như một đô thị thu nhỏ với trang thiết bị hiện đại và đầy đủ giúp sinh viên có thể tập trung cho hoạt động học tập cũng như có nhiều trải nghiệm với cuộc sống tập thể, tự lập.',
+                        ),
+                        array(
+                            'img' => 'images/1x/svv4.png',
+                            'title' => 'Trải nghiệm trong suốt quá trình học',
+                            'desc' => 'Sinh viên Đại học FPT có 66% thời lượng thực hành các môn chuyên ngành, 100% sinh viên được làm dự án thực tế vào cuối môn. Đồng thời, 100% sinh viên được tham gia học kỳ thực tập và làm việc thực tế tại doanh nghiệp. Ngoài ra còn có các môn học: võ Vovinam, nhạc cụ dân tộc và nhiều hoạt động ngoại khoá, CLB để phát triển kỹ năng toàn diện.',
+                        ),
+                        array(
+                            'img' => 'images/1x/svv5.png',
+                            'title' => 'Cơ hội học tập nước ngoài',
+                            'desc' => 'Sinh viên Đại học FPT thông tạo 2 ngoại ngữ, 100% sinh viên có cơ hội học tập, trao đổi, thực tập ở nước ngoài. Đại học FPT có mạng lưới liên kết với +86 trường tại hơn 33 quốc gia trên thế giới. 19% cựu sinh viên Đại học FPT đang học tập và làm việc tại nước ngoài.',
+                        ),
+                        array(
+                            'img' => 'images/1x/svv6.png',
+                            'title' => 'Cơ hội việc làm',
+                            'desc' => 'Sinh viên được lựa chọn nhiều chuyên ngành đón đầu xu hướng 4.0, đáp ứng nhu cầu nhân lực chất lượng cao của thị trường, các chuyên ngành mới như AI - Trí tuệ nhân tạo, IoT - Internet vạn vật,… Với phương pháp đào tạo đổi mới, áp dụng công nghệ hiện đại vào giảng dạy, sinh viên được đào tạo toàn diện từ kiến thức đến ngoại ngữ và kỹ năng mềm. 98% sinh viên có việc làm ngay sau khi ra trường.',
+                        ),
+                    );
+                    foreach ($data as $k=>$v): ?>
+                        <div>
+                            <div class="uk-grid-small" uk-grid>
+                                <div class="uk-width-2-5">
+                                    <div class="home__sinhvienchon__coverImg uk-cover-container dynamic-height">
+                                        <img src="<?= $v['img'] ?>" alt="" uk-cover="">
+                                        <canvas width="251" height="189"></canvas>
+                                    </div>
+                                </div>
+                                <div class="uk-width-expand uk-light">
+                                    <h4 class="home__sinhvienchon__title uk-h4 uk-margin-remove"><?= $v['title'] ?></h4>
+                                    <div class="home__sinhvienchon__desc item__10"><?= $v['desc'] ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="home__dky__item-40-20 uk-text-center">
+                <button type="button" class="uk-button uk-button-secondary home__dky__btnSubmit">ĐĂNG KÝ NGAY</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/50.000++ Sinh viên đã chọn Đại Học FPT-->
+
 <!--Chuyên ngành đào tạo-->
 <div class="uk-section home__daotao">
     <div class="uk-container">

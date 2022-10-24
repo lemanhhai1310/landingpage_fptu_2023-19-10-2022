@@ -1,5 +1,29 @@
 $goc: 70deg;
+.dynamic-height{}
 .home{
+  &__sinhvienchon{
+    background-color: #{$primary-color};
+    &__txt{
+      @extend .fz-14;
+      line-height: (16.8/14);
+      font-family: $font-Barlow-Medium;
+    }
+    &__desc{
+      @extend .fz-12;
+      font-family: $font-Barlow-Regular;
+      line-height: (14.4/12);
+    }
+    &__title{
+      @extend .fz-26;
+      font-family: $font-HelveticaNeue-Regular;
+      line-height: (31.2/26);
+    }
+    &__coverImg{
+      $h:var(--height);
+      $x:calc(#{$h}/tan(#{$goc}));
+      clip-path: polygon(#{$x} 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
   &__hinhanh{
     background-color: #{$primary-color};
     img{
@@ -240,10 +264,17 @@ $goc: 70deg;
       @extend .fz-12;
       font-family: $font-Barlow-Regular;
       background: #{$primary-color};
+      .home__sinhvienchon &{
+        background: #{$secondary-color};
+      }
       &:hover{
         border-color: #ffffff;
         color: #{$primary-color};
         background: #ffffff;
+
+        .home__sinhvienchon &{
+          color: #{$secondary-color};
+        }
       }
     }
     &__item-40-20{
