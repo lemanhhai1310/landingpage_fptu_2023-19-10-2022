@@ -8,26 +8,37 @@
                 <a href="" class="uk-navbar-item uk-logo"><img src="images/1x/logo-fpt.png" alt=""></a>
             </div>
             <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav uk-visible@m">
-                    <li class="uk-active"><a href="#">Trang Chủ</a></li>
-                    <li><a href="#">Tại Sao Chọn ĐH FPT?</a></li>
-                    <li><a href="#">Thông Báo Tuyển Sinh</a></li>
-                    <li><a href="#">Chuyên Ngành Đào Tạo</a></li>
-                    <li><a href="#">Đăng Ký Học</a></li>
+                <ul id="menus" class="header__menu uk-navbar-nav" uk-scrollspy-nav="closest: li; scroll: true">
+                    <li class="uk-active"><a href="#home">Trang Chủ</a></li>
+                    <li><a href="#taisaochon">Tại Sao Chọn ĐH FPT?</a></li>
+                    <li><a href="#thongbaotuyensinh">Thông Báo Tuyển Sinh</a></li>
+                    <li><a href="#chuyennganhdaotao">Chuyên Ngành Đào Tạo</a></li>
+                    <li><a href="#dangkyhoc">Đăng Ký Học</a></li>
                     <li><a href="#">Đăng Nhập</a></li>
                 </ul>
-                <a class="uk-navbar-toggle uk-hidden@m" href="#">
+                <a class="uk-navbar-toggle uk-hidden@m" href="javascript:void(0)" onclick="geeksforgeeks()">
                     <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
                 </a>
+                <script>
+                    // Function to toggle the bar
+                    function geeksforgeeks() {
+                        var x = document.getElementById("menus");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+                        } else {
+                            x.style.display = "block";
+                        }
+                    }
+                </script>
             </div>
         </nav>
     </div>
 </header>
-<div class="home__block01 uk-position-relative uk-overflow-hidden">
-    <div uk-scrollspy="cls: uk-animation-slide-right; repeat: true" class="dynamic-height home__block01__top uk-position-top-right uk-cover-container uk-visible@m">
+<div id="home" class="home__block01 uk-position-relative uk-overflow-hidden">
+    <div uk-scrollspy="cls: uk-animation-slide-right; repeat: false" class="dynamic-height home__block01__top uk-position-top-right uk-cover-container uk-visible@m">
         <canvas width="382" height="144"></canvas>
     </div>
-    <div uk-scrollspy="cls: uk-animation-slide-left; repeat: true" class="dynamic-height home__block01__bottom uk-position-bottom-left uk-cover-container uk-visible@m">
+    <div uk-scrollspy="cls: uk-animation-slide-left; repeat: false" class="dynamic-height home__block01__bottom uk-position-bottom-left uk-cover-container uk-visible@m">
         <canvas width="571" height="97"></canvas>
     </div>
     <div class="uk-height-min-large uk-flex uk-flex-bottom">
@@ -69,7 +80,7 @@
                         </div>
                     </div>
                     <div class="uk-width-auto@m uk-flex-first@m">
-                        <img uk-scrollspy="cls: uk-animation-slide-bottom; repeat: true" src="images/1x/bg1.png" alt="">
+                        <img uk-scrollspy="cls: uk-animation-slide-bottom; repeat: false" src="images/1x/bg1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -123,7 +134,7 @@
     </div>
 </div>
 <!--50.000++ Sinh viên đã chọn Đại Học FPT-->
-<div class="home__sinhvienchon uk-flex uk-flex-middle">
+<div id="taisaochon" class="home__sinhvienchon uk-flex uk-flex-middle">
     <div class="uk-section uk-width-1-1">
         <div class="uk-container">
             <div class="home__dky__item-40-20 uk-light">
@@ -196,7 +207,7 @@
 <!--/50.000++ Sinh viên đã chọn Đại Học FPT-->
 
 <!--Chuyên ngành đào tạo-->
-<div class="uk-section home__daotao">
+<div id="chuyennganhdaotao" class="uk-section home__daotao">
     <div class="uk-container">
         <div class="home__dky__item-40-20">
             <h2 class="uk-h2 home__dky__title uk-text-center uk-margin-remove">
@@ -208,14 +219,17 @@
                 <?php
                 $data = array(
                     array(
+                        'img' => 'images/1x/icon1.png',
                         'title' => 'Ngành Quản Trị Kinh Doanh',
                         'txt' => '<span>MÃ NGÀNH:</span> 7340101 / <span>CHỈ TIÊU:</span> 6265',
                     ),
                     array(
+                        'img' => 'images/1x/icon2.png',
                         'title' => 'Công Nghệ Thông Tin',
                         'txt' => '<span>MÃ NGÀNH:</span> 7480201 / <span>CHỈ TIÊU:</span> 9715',
                     ),
                     array(
+                        'img' => 'images/1x/icon3.png',
                         'title' => 'Ngôn Ngữ',
                         'txt' => '<span>CHỈ TIÊU:</span> 1085',
                     ),
@@ -231,10 +245,47 @@
                     <div class="home__daotao__item">
                         <div class="uk-grid-10" uk-grid>
                             <div class="uk-width-auto">
-
+                                <div class="uk-cover-container home__daotao__coverImg dynamic-height" data-src="<?= $v['img'] ?>" uk-img>
+                                    <canvas width="145" height="145"></canvas>
+                                </div>
                             </div>
                             <div class="uk-width-expand">
+                                <?php if ($k==0): ?>
+                                    <ul class="uk-list home__daotao__list uk-list-collapse">
+                                        <li>• Digital Marketing</li>
+                                        <li>• Kinh doanh quốc tế</li>
+                                        <li>• Quản trị khách sạn</li>
+                                        <li>• Quản trị dịch vụ du lịch & lữ hành</li>
+                                        <li>• Quản trị truyền thông đa phương tiện</li>
+                                    </ul>
+                                <?php endif; ?>
 
+                                <?php if ($k==1): ?>
+                                    <ul class="uk-list home__daotao__list uk-list-collapse">
+                                        <li>• Kỹ thuật phần mềm</li>
+                                        <li>• Hệ thống thông tin</li>
+                                        <li>• Trí tuệ nhân tạo</li>
+                                        <li>• An toàn thông tin</li>
+                                        <li>• Thiết kế Mỹ thuật số</li>
+                                    </ul>
+                                <?php endif; ?>
+
+                                <?php if ($k==2): ?>
+                                    <ul class="uk-list home__daotao__list">
+                                        <li>
+                                            <b>Ngành Ngôn Ngữ Anh</b> <br>
+                                            Mã ngành: 7220201
+                                        </li>
+                                        <li>
+                                            <b>Ngành Ngôn Ngữ Nhật</b> <br>
+                                            Mã ngành: 7220209
+                                        </li>
+                                        <li>
+                                            <b>Ngành Ngôn Ngữ Hàn</b> <br>
+                                            Mã ngành: 7220210
+                                        </li>
+                                    </ul>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -247,7 +298,7 @@
 <!--/Chuyên ngành đào tạo-->
 
 <!--Thông báo tuyển sinh Hệ đại học chính quy Đại học FPT năm 2023-->
-<div class="uk-section home__tuyensinh">
+<div id="thongbaotuyensinh" class="uk-section home__tuyensinh">
     <div class="uk-container">
         <div class="home__dky__item-40-20 uk-light">
             <h2 class="uk-h2 home__dky__title uk-text-center uk-margin-remove">
@@ -391,7 +442,7 @@
 </div>
 <!--/Sinh viên, phụ huynh, nhà tuyển dụng nói gì?-->
 <!--Đăng ký nộp hồ sơ vào Đại học FPT-->
-<div class="uk-section home__dky">
+<div id="dangkyhoc" class="uk-section home__dky">
     <div class="uk-container">
         <div class="home__dky__item-40-20 uk-light">
             <h2 class="uk-h2 home__dky__title uk-text-center uk-margin-remove">Đăng ký nộp hồ sơ vào Đại học FPT</h2>

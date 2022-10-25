@@ -1,4 +1,4 @@
-$goc: 70deg;
+$goc: 65deg;
 .dynamic-height{}
 .home{
   &__block01{
@@ -73,6 +73,18 @@ $goc: 70deg;
       clip-path: polygon(#{$x} 0%, 100% 0%, calc(100% - #{$x}) 100%, 0% 100%);
       display: flex;
       align-items: center;
+    }
+    &__list{
+      >li{
+        font-size: 12px;
+        font-family: $font-Barlow-Regular;
+        color: #000000;
+      }
+    }
+    &__coverImg{
+      background: #{$secondary-color};
+      background-repeat: no-repeat !important;
+      background-position: center !important;
     }
     &__box1{
       background-color: #{$primary-color};

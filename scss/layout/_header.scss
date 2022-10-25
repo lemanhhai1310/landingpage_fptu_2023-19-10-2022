@@ -13,6 +13,23 @@
     @extend .header__navItem;
     color: #ffffff;
   }
+  &__menu{
+    @include media-breakpoint-down('s'){
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      transition: all .3s;
+      height: auto;
+      background-color: #{$secondary-color};
+      >li{
+        >a{
+          min-height: 40px !important;
+        }
+      }
+    }
+  }
   .uk-navbar-nav{
     >li{
       >a{
@@ -20,6 +37,11 @@
         text-transform: inherit;
         @extend .header__navItem;
         font-family: $font-Barlow-Medium;
+      }
+      &.uk-active{
+        >a{
+          //color: yellow;
+        }
       }
     }
   }
